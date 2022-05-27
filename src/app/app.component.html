@@ -1,0 +1,174 @@
+<app-navb></app-navb>
+<app-samp-http-post></app-samp-http-post>
+<hr>
+<app-http-comp></app-http-comp>
+<hr>
+<app-filtering-pipe></app-filtering-pipe>
+<hr>
+<app-custom-val-com></app-custom-val-com>
+<hr>
+<app-reactive-form-com></app-reactive-form-com>
+<hr>
+<app-assg-form></app-assg-form>
+<hr>
+<app-form-comp></app-form-comp>
+<router-outlet></router-outlet>
+<br>
+<hr>
+
+<a routerLink='tool-mod/about'>about</a>
+
+<p style="font-size: 30px;"><b>rounting between buttons</b></p>
+<nav>
+    <a routerLink='/emp-rou/:id/:namee' routerLinkActive='active'>employee</a>
+    <a [routerLink]="['/students-rou']" 
+       [queryParams]="{madhu:'3'}" 
+       [fragment]="'enjoy'" routerLinkActive='active'>students</a>
+    <!-- <a routerLink="/tool-mod" routerLinkActive='active'>tools</a> -->
+
+    <app-about-navigate></app-about-navigate>
+
+</nav>
+<hr>
+<p style="font-size: 30px;"><b>canDeactivate</b></p>
+<!-- <app-un-saved-search></app-un-saved-search> -->
+
+<!-- <button routerLink='/' routerLinkActive='active'>employee</button>
+<button routerLink='/students-rou'>students</button> -->
+<!-- <router-outlet></router-outlet> -->
+
+<hr>
+<p style="font-size: 30px;"><b>assignment-5</b></p>
+<div class="container">
+    <div class="row">
+         <div class="col-xs-12 col-md-08 col-md-offset-2">
+             <app-active-users>
+
+             </app-active-users>
+
+             <app-inactive-users>
+
+             </app-inactive-users>
+
+         </div>
+    </div>
+</div>
+
+<hr>
+<p appChangecolor style="font-size: 30px;"><b>directive concept</b></p>
+<p appRendererDir style="font-size: 30px;"><b>Renderer directive concept</b></p>
+<p appHoatDir style="font-size: 30px;"><b>Host</b></p>
+<button appHoatDir>host conc</button>
+
+
+
+<p style="font-size: 30px;"><b>simple form</b></p>
+<app-smallform (detInfo)="disp= $event" (detInfo2)="disp2=$event"></app-smallform>
+{{disp}}
+{{disp2}}
+<hr>
+
+<p style="font-size: 30px;"><b>assignment4</b></p>
+<app-gamecontrol (exeInterval)= "exec($event)" ></app-gamecontrol>
+<app-even *ngFor= "let evenNo of evenNumbers" [evenNum]= "evenNo"></app-even>
+<app-odd *ngFor= "let oddNo of oddNumbers" [oddNum]= "oddNo"></app-odd>
+
+
+<hr>
+<p style="font-size: 30px;"><b>ng-content</b></p>
+<app-content-ng>
+    single-----ng content working.....
+    <p>multiple</p>
+
+</app-content-ng>
+
+<hr>
+<p style="font-size: 30px;"><b>view encapsulation</b></p>
+<app-textcomponent></app-textcomponent>
+
+<hr>
+<p style="font-size: 30px;"><b>viewchild/view children</b></p>
+<app-viewchldconc></app-viewchldconc>
+
+<br>
+<hr>
+<p style="font-size: 30px;"><b>component interaction</b></p>
+
+<app-test (childName) = "msg = $event" [parentName] = "crs"></app-test> 
+{{msg}}
+
+
+<hr>
+<h3>hey guys</h3>
+<hr>
+<p>my name is {{text}}</p>
+<p>i like cameras</p>
+<img [src]="image" />
+
+<div>
+    <label>username</label>
+    <input [(ngModel)] ="username" type="text" />
+    <br>
+   <p> {{username}}</p>
+</div>
+<div>
+    <button [disabled]=" username==='' " (click) =" username='' ">reset text</button>
+</div>
+<br>
+<hr>
+
+<p style="font-size: 30px;"><b>If-Else</b></p>
+
+<div [ngStyle]="{backgroundColor : styling()}"  >
+    <p *ngIf="course.length > 0 ; then c else d" >
+
+    </p>
+</div>
+<ng-template #c>
+    course exist
+</ng-template>
+<ng-template #d>
+    no courses
+</ng-template>
+
+<br>
+<p style="font-size: 30px;"><b>switch case</b></p>
+
+<ul>
+    <li [class.active]="color=='red'"><a (click)="color = 'red'">red color</a></li>
+    <li [class.active]="color=='blue'"><a (click)="color = 'blue'">blue color</a></li>
+</ul>
+<div [ngSwitch]="color">
+    <p *ngSwitchCase="'red'">red color</p>
+    <p *ngSwitchCase="'blue'">blue color</p>
+    <p *ngSwitchDefault>no color</p>
+</div>
+
+<br>
+<p style="font-size: 30px;"><b>for</b></p>
+
+<button (click)="oncl()">add</button>
+<ul>
+    <li *ngFor = "let details of num">
+     {{details.name}}
+     <button (click) = "ondeleting(details)">deleting</button>
+     <button (click) = "onupdate(details)">update</button>
+    </li>
+</ul>
+<button (click) ="onremove()">del</button>
+
+<br>
+<p style="font-size: 30px;"><b>assignment2</b></p>
+
+<button (click)="onpress()">Display Details</button>
+<p *ngIf="value">Secret password=tuna</p>
+<div *ngFor = "let arrele of arr ; let i = index" 
+      [ngStyle] = "{backgroundColor : i >= 4 ? 'blue' : 'white'}"
+      [ngClass] = "{change : i >= 4}">
+    {{arrele}}
+</div>
+
+
+
+
+

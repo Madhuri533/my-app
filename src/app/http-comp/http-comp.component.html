@@ -1,0 +1,45 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">name</label>
+                    <input 
+                    type="text" 
+                    id="name" 
+                    class="form-control"
+                    formControlName="name">
+                </div>
+                <div class="form-group">
+                    <label for="age">age</label>
+                    <input 
+                    type="number" 
+                    id="age" 
+                    class="form-control"
+                    formControlName="age">
+                </div>
+                <div class="form-group">
+                    <label for="color">color</label>
+                    <input 
+                    type="text" 
+                    id="color" 
+                    class="form-control"
+                    formControlName="color">
+                </div>
+                <button class="btn btn-primary" type="submit">submit</button>
+                <button class="btn btn-primary" type="button" (click)="show()">print</button>
+            </form>
+
+            <div class="row">
+                <ul class="list-group">
+                    <li class="list-group-items" *ngFor="let i of disp">
+                        <!-- <h1>{{i.name}}</h1>
+                        <p>{{i.Age}}</p>
+                        <p>{{i.color}}</p> -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,14 @@
+
+<input type="text" #info/>
+<button (click)="done(info)">send</button>
+<button (click)="onReceiving()">recieve</button>
+<div class="row">
+    <ul class="list-group">
+        <li class="list-group-items" *ngFor="let item of disp">
+            <h1>{{item.name}}</h1>
+            <p>{{item.age}}</p>
+            <p>{{item.color}}</p>
+            <button (click)="onDel(item)">delete</button>
+        </li>
+    </ul>
+</div>

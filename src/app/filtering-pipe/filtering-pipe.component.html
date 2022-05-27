@@ -1,0 +1,8 @@
+<div  *ngFor="let user of users| filter:'status'">
+    {{user.uname}}
+
+</div>
+<hr>
+<div *ngFor="let user of users  | sort:'uname'">
+    {{user.uname}}
+</div>

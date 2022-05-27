@@ -1,0 +1,22 @@
+
+<input #getting type="text"/>
+<button (click)= 'dis()'>display</button>
+<p>{{getting.value}}</p>
+
+<h3 #change>viewchldconc works!!!!</h3>
+
+<h3> another one</h3>
+
+<p #vcn>about view children...</p>
+
+
+<p #vcn>middle paragraph.....</p>
+
+<p #vcn>second paragraph for view children....</p>
+<p>.........................................</p>
+
+<app-child #childConc></app-child>
+
+<button (click)= inc()>incrementing</button>
+<button (click)= dec()>decrementing</button>
+<p>{{childConc.count}}</p>

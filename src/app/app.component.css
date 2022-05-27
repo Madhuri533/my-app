@@ -1,0 +1,7 @@
+.change{
+    color: white;
+}
+
+nav a.active{
+    color: red;
+}

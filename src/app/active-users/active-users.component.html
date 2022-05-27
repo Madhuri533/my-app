@@ -1,0 +1,9 @@
+
+<h3>Active-user</h3>
+<ul>
+    <li *ngFor='let user of activeUserArry; let i=index'>
+        {{user}} --- <a href="#"  (click)="inactiveOne(i)">inactive</a>
+
+    </li>
+
+</ul>
